@@ -134,7 +134,7 @@ export default function Home() {
     })
 
     // Page numbers
-    const total = doc.internal.getNumberOfPages()
+    const total = (doc.internal as any).getNumberOfPages()
     for (let i = 2; i <= total; i++) {
       doc.setPage(i); doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(160, 150, 140)
       doc.text(String(i - 1), pageW / 2, pageH - 10, { align: 'center' })
